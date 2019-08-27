@@ -8,7 +8,7 @@ import re
 from tqdm import tqdm, trange
 import numpy as np
 import tensorflow as tf
-from tensorflow.core.protobuf import rewriter_config_pb2
+# from tensorflow.core.protobuf import rewriter_config_pb2
 import time
 from datetime import datetime
 import csv
@@ -94,7 +94,7 @@ def start_tf_sess(threads=-1, server=None):
     """
     config = tf.compat.v1.ConfigProto()
     config.gpu_options.allow_growth = True
-    config.graph_options.rewrite_options.layout_optimizer = rewriter_config_pb2.RewriterConfig.OFF
+#     config.graph_options.rewrite_options.layout_optimizer = rewriter_config_pb2.RewriterConfig.OFF
     if threads > 0:
         config.intra_op_parallelism_threads = threads
         config.inter_op_parallelism_threads = threads
